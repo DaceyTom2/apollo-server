@@ -1,14 +1,5 @@
-const books = [
-  {
-    title: 'The Awakening',
-    author: 'Kate Chopin',
-  },
-  {
-    title: 'City of Glass',
-    author: 'Paul Auster',
-  },
-];
+import { getBooks } from "../../../datasets/books.js"
 
 export default {
-    books: () => books
+    books: () => getBooks()
   };
