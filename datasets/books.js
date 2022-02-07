@@ -22,13 +22,16 @@ function getBookByID(id) {
 }
 
 function addBook(id, title, author) {
+    if (getBookByID(id).length > 0){
+        return false
+    }
     const book = {
         id: id,
         title: title, 
         author: author
     }
     books.push(book)
-    return book
+    return true
 }
 
 export { getBooks, getBookByID, addBook }

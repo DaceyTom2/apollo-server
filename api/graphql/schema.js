@@ -14,13 +14,18 @@ const schema = {
       ${BookTypes}
       ${AuthorTypes}
 
+      type Response {
+        success: Boolean
+        message: String
+      }
+
       type Query {
         books(id: ID): [Book]
         authors: [Author]
       }
 
       type Mutation {
-        addBook(id: ID, title: String, author: String): Book
+        addBook(id: ID, title: String, author: String): Response
       }
     `,
     resolvers: {

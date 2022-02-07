@@ -1,7 +1,12 @@
-import { addBook } from "../../../datasets/books.js"
+import { addBook, getBookByID } from "../../../datasets/books.js"
 
 export default {
-    addBook: (_, {id, title, author}) => { 
-      return addBook(id, title, author)
+    addBook: async (_, {id, title, author}) => { 
+        if (addBook(id, title, author)){
+            return { success: true, message: "Book added" }
+        }
+        else{
+            return { success: false, message: "Failed to add book" }
+        }
     },
   };
