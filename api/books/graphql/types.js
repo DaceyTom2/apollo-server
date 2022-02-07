@@ -1,7 +1,7 @@
 const BookFields = `
   id: ID!
   title: String
-  author: String
+  author: Author
 `;
 
 export default `

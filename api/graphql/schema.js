@@ -9,6 +9,8 @@ import BookMutations from "../books/graphql/mutations.js"
 import AuthorTypes from "../author/graphql/types.js";
 import AuthorQueries from "../author/graphql/queries.js";
 
+import { getAuthorByID } from "../../datasets/authors.js"
+
 const schema = {
     typeDefs: gql`
       ${BookTypes}
@@ -16,7 +18,7 @@ const schema = {
 
       type Query {
         books(id: ID): [Book]
-        authors: [Author]
+        authors(id: ID): [Author]
       }
 
       type Mutation {
@@ -30,6 +32,11 @@ const schema = {
       },
       Mutation: {
         ...BookMutations,
+      },
+      Book: {
+        author: (book) => {
+          return getAuthorByID(book.author)
+        }
       }
     },
   };
