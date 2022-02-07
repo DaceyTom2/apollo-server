@@ -1,4 +1,5 @@
 const BookFields = `
+  id: ID!
   title: String
   author: String
 `;

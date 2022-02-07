@@ -1,9 +1,13 @@
+import { getAuthors } from "./authors.js"
+
 let books = [
     {
+      id: 1,
       title: 'The Awakening',
       author: 'Kate Chopin',
     },
     {
+      id: 2,
       title: 'City of Glass',
       author: 'Paul Auster',
     },
@@ -13,9 +17,10 @@ function getBooks() {
     return books;
 }
 
-function addBook(title, author) {
+function addBook(id, title, author) {
     books.push(
         {
+            id: id,
             title: title, 
             author: author
         }
