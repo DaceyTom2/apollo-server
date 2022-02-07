@@ -14,8 +14,7 @@ const schema = {
       ${AuthorTypes}
 
       type Query {
-        books: [Book]
-        book(id: ID): [Book]
+        books(id: ID): [Book]
         authors: [Author]
       }
     `,
