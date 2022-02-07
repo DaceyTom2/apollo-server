@@ -1,15 +1,15 @@
-import { getAuthors } from "./authors.js"
+import { getAuthors, getAuthorByID } from "./authors.js"
 
 let books = [
     {
       id: 1,
       title: 'The Awakening',
-      author: 'Kate Chopin',
+      author: getAuthorByID(1)[0],
     },
     {
       id: 2,
       title: 'City of Glass',
-      author: 'Paul Auster',
+      author: getAuthorByID(2)[0],
     },
   ];
 
