@@ -22,13 +22,13 @@ function getBookByID(id) {
 }
 
 function addBook(id, title, author) {
-    books.push(
-        {
-            id: id,
-            title: title, 
-            author: author
-        }
-    )
+    const book = {
+        id: id,
+        title: title, 
+        author: author
+    }
+    books.push(book)
+    return book
 }
 
 export { getBooks, getBookByID, addBook }
