@@ -10,6 +10,7 @@ import AuthorTypes from "../author/graphql/types.js";
 import AuthorQueries from "../author/graphql/queries.js";
 
 import { getAuthorByID } from "../../datasets/authors.js"
+import { getBookByID } from "../../datasets/books.js"
 
 const schema = {
     typeDefs: gql`
@@ -37,7 +38,12 @@ const schema = {
         author: (book) => {
           return getAuthorByID(book.author)
         }
-      }
+      },
+      Author: {
+        books: (author) => {
+          return author.books.map(x => getBookByID(x))
+        }
+      },
     },
   };
   
