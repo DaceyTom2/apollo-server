@@ -1,5 +1,7 @@
-import { getBooks } from "../../../datasets/books.js"
+import { getBooks, getBookByID } from "../../../datasets/books.js"
 
 export default {
-    books: () => getBooks()
+    books: (_, {id}) => { 
+      return id ? getBookByID(id) : getBooks()
+    },
   };

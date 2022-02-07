@@ -17,6 +17,10 @@ function getBooks() {
     return books;
 }
 
+function getBookByID(id) {
+    return books.filter(book => book.id == id);
+}
+
 function addBook(id, title, author) {
     books.push(
         {
@@ -27,4 +31,4 @@ function addBook(id, title, author) {
     )
 }
 
-export { getBooks, addBook }
+export { getBooks, getBookByID, addBook }
