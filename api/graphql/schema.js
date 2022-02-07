@@ -5,17 +5,23 @@ import { makeExecutableSchema } from "@graphql-tools/schema";
 import BookTypes from "../books/graphql/types.js";
 import BookQueries from "../books/graphql/queries.js";
 
+import AuthorTypes from "../author/graphql/types.js";
+import AuthorQueries from "../author/graphql/queries.js";
+
 const schema = {
     typeDefs: gql`
       ${BookTypes}
+      ${AuthorTypes}
 
       type Query {
         books: [Book]
+        authors: [Author]
       }
     `,
     resolvers: {
       Query: {
         ...BookQueries,
+        ...AuthorQueries,
       },
     },
   };
