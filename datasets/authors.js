@@ -13,6 +13,10 @@ function getAuthors() {
     return authors;
 }
 
+function getAuthorByID(id) {
+  return authors.find(author => author.id == id);
+}
+
 function addAuthor(id, name) {
     authors.push(
         {
@@ -22,4 +26,4 @@ function addAuthor(id, name) {
     )
 }
 
-export { getAuthors, addAuthor }
+export { getAuthors, getAuthorByID, addAuthor }

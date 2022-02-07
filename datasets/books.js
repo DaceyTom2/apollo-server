@@ -4,12 +4,12 @@ let books = [
     {
       id: 1,
       title: 'The Awakening',
-      author: 'Kate Chopin',
+      author: 1,
     },
     {
       id: 2,
       title: 'City of Glass',
-      author: 'Paul Auster',
+      author: 2,
     },
   ];
 
@@ -18,7 +18,7 @@ function getBooks() {
 }
 
 function getBookByID(id) {
-    return books.filter(book => book.id == id);
+    return books.find(book => book.id == id);
 }
 
 function addBook(id, title, author) {
