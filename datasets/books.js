@@ -8,9 +8,29 @@ let books = [
     },
     {
       id: 2,
+      title: 'The Story of an Hour',
+      author: 1,
+    },
+    {
+      id: 3,
       title: 'City of Glass',
       author: 2,
     },
+    {
+      id: 4,
+      title: 'Rainbow Six',
+      author: 3,
+    },
+    {
+      id: 5,
+      title: 'Hunt for Red October',
+      author: 3,
+    },
+    {
+      id: 6,
+      title: 'The Sum of All Fears',
+      author: 3,
+    }
   ];
 
 function getBooks() {
