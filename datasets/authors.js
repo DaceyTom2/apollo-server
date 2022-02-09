@@ -30,11 +30,10 @@ function addAuthor(id, name, books) {
     return false;
   }
   const author = {
-    id: id,
+    id: Number(id),
     name: name,
-    books: books,
+    books: books.map(Number),
   };
-  authors.push(author);
   return true;
 }
 

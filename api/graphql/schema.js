@@ -26,24 +26,8 @@ const schema = {
     type Response {
       success: Boolean
       message: String
-    }
+    }`,
 
-    type Query {
-      books(id: ID): [Book]
-      authors(id: ID): [Author]
-      libraries(id: ID): [Library]
-    }
-
-    type Mutation {
-      addBook(id: ID!, title: String, author: ID): Response
-      deleteBook(id: ID!): Response
-      addAuthor(id: ID!, name: String, books: [ID]): Response
-      updateAuthor(id: ID!, name: String, books: [ID]): Response
-      deleteAuthor(id: ID!): Response
-      addLibrary(id: ID!, name: String, books: [ID]): Response
-      deleteLibrary(id: ID!): Response
-    }
-  `,
   resolvers: {
     Query: {
       ...BookQueries,

@@ -1,5 +1,5 @@
 import { getAuthorByID } from "../../../datasets/authors.js";
-import { getLibrariesByIDs } from "../../../datasets/libraries.js";
+import { getLibraryByID } from "../../../datasets/libraries.js";
 
 export default {
   Book: {
@@ -7,7 +7,7 @@ export default {
       return getAuthorByID(book.author);
     },
     library: (book) => {
-      return getLibrariesByIDs(book.library);
+      return book.library.map((x) => getLibraryByID(x))
     },
   },
 };
