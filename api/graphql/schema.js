@@ -38,6 +38,7 @@ const schema = {
       addBook(id: ID!, title: String, author: ID): Response
       deleteBook(id: ID!): Response
       addAuthor(id: ID!, name: String, books: [ID]): Response
+      updateAuthor(id: ID!, name: String, books: [ID]): Response
       deleteAuthor(id: ID!): Response
       addLibrary(id: ID!, name: String, books: [ID]): Response
       deleteLibrary(id: ID!): Response
