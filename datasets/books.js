@@ -1,5 +1,3 @@
-import { getAuthors } from "./authors.js"
-
 let books = [
     {
       id: 1,
@@ -42,7 +40,8 @@ function getBookByID(id) {
 }
 
 function addBook(id, title, author) {
-    if (getBookByID(id).length > 0){
+    if (getBookByID(id) != undefined){
+      //Book with given ID Exists
         return false
     }
     const book = {
@@ -54,4 +53,16 @@ function addBook(id, title, author) {
     return true
 }
 
-export { getBooks, getBookByID, addBook }
+function deleteBook(id)
+{
+  if (getBookByID(id) == undefined){
+    //Book with given ID Does Not Exist
+    return false
+  }
+
+  const index = books.findIndex(b => b.id == id);
+  books.splice(index, 1);
+  return true;
+}
+
+export { getBooks, getBookByID, addBook, deleteBook }
