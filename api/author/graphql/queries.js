@@ -1,7 +1,7 @@
-import { getAuthors, getAuthorByID } from "../../../datasets/authors.js"
+import { getAuthors, getAuthorByID } from "../../../datasets/authors.js";
 
 export default {
-    authors: (_, {id}) => { 
-      return id ? [getAuthorByID(id)] : getAuthors()
-    },
-  };
+  authors: (_, { id }) => {
+    return id ? [getAuthorByID(id)] : getAuthors();
+  },
+};

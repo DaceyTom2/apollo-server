@@ -1,6 +1,5 @@
-import { ApolloServer } from 'apollo-server';
+import { ApolloServer } from "apollo-server";
 import schema from "./api/graphql/schema.js";
-
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
