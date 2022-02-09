@@ -5,17 +5,17 @@ import { makeExecutableSchema } from "@graphql-tools/schema";
 import BookTypes from "../books/graphql/types.js";
 import BookQueries from "../books/graphql/queries.js";
 import BookMutations from "../books/graphql/mutations.js"
+import BookResolvers from "../books/graphql/resolvers.js"
 
 import AuthorTypes from "../author/graphql/types.js";
 import AuthorQueries from "../author/graphql/queries.js";
 import AuthorMutations from "../author/graphql/mutations.js";
+import AuthorResolvers from "../author/graphql/resolvers.js";
 
 import LibraryTypes from "../library/graphql/types.js";
 import LibraryQueries from "../library/graphql/queries.js";
 import LibraryMutations from "../library/graphql/mutations.js";
-
-import { getAuthorByID } from "../../datasets/authors.js"
-import { getBookByID } from "../../datasets/books.js"
+import LibraryResolvers from "../library/graphql/resolvers.js"
 
 const schema = {
     typeDefs: gql`
@@ -54,21 +54,9 @@ const schema = {
         ...AuthorMutations,
         ...LibraryMutations,
       },
-      Book: {
-        author: (book) => {
-          return getAuthorByID(book.author)
-        }
-      },
-      Author: {
-        books: (author) => {
-          return author.books.map(x => getBookByID(x))
-        }
-      },
-      Library: {
-        books: (author) => {
-          return author.books.map(x => getBookByID(x))
-        }
-      },
+      ...BookResolvers,
+      ...AuthorResolvers,
+      ...LibraryResolvers,
     },
   };
   
