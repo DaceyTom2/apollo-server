@@ -38,6 +38,16 @@ function addAuthor(id, name, books) {
   return true;
 }
 
+function updateAuthor(id, name, books) {
+  let author = getAuthorByID(id);
+  if (getAuthorByID(id) == undefined) {
+    return false;
+  }
+  author.name = name;
+  author.book = books;
+  return true;
+}
+
 function deleteAuthor(id) {
   if (getAuthorByID(id) == undefined) {
     //Author with given ID Does Not Exist
@@ -49,4 +59,4 @@ function deleteAuthor(id) {
   return true;
 }
 
-export { getAuthors, getAuthorByID, addAuthor, deleteAuthor };
+export { getAuthors, getAuthorByID, addAuthor, updateAuthor, deleteAuthor };
