@@ -3,31 +3,37 @@ let books = [
       id: 1,
       title: 'The Awakening',
       author: 1,
+      library: [1, 2],
     },
     {
       id: 2,
       title: 'The Story of an Hour',
       author: 1,
+      library: [1],
     },
     {
       id: 3,
       title: 'City of Glass',
       author: 2,
+      library: [2],
     },
     {
       id: 4,
       title: 'Rainbow Six',
       author: 3,
+      library: [],
     },
     {
       id: 5,
       title: 'Hunt for Red October',
       author: 3,
+      library: [2],
     },
     {
       id: 6,
       title: 'The Sum of All Fears',
       author: 3,
+      library: [],
     }
   ];
 
