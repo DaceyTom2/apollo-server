@@ -1,4 +1,8 @@
-import { addBook, deleteBook } from "../../../datasets/books.js";
+import {
+  addBook,
+  updateBook,
+  deleteBook,
+} from "../../../datasets/books.js";
 
 export default {
   addBook: async (_, { id, title, author, library}) => {
@@ -6,6 +10,13 @@ export default {
       return { success: true, message: "Book added" };
     } else {
       return { success: false, message: "Failed to add book" };
+    }
+  },
+  updateBook: async (_, { id, title, author, library }) => {
+    if (updateBook(id, title, author, library)) {
+      return { success: true, message: "Book updated" };
+    } else {
+      return { success: false, message: "Failed to update book" };
     }
   },
   deleteBook: async (_, { id }) => {

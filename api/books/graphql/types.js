@@ -11,6 +11,7 @@ const BookQueries = `
 
 const BookMutations = `
   addBook(id: ID!, title: String, author: ID, library: [ID]): Response
+  updateBook(id: ID!, title: String, author: ID, library: [ID]): Response
   deleteBook(id: ID!): Response 
 `;
 
