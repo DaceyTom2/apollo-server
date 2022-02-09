@@ -19,10 +19,6 @@ function getLibraryByID(id) {
   return libraries.find((library) => library.id == id);
 }
 
-function getLibrariesByIDs(ids) {
-  return libraries.filter((library) => ids.includes(library.id));
-}
-
 function addLibrary(id, name, books) {
   if (getLibraryByID(id) != undefined) {
     //Author with given ID Exists
@@ -51,7 +47,6 @@ function deleteLibrary(id) {
 export {
   getLibraries,
   getLibraryByID,
-  getLibrariesByIDs,
   addLibrary,
   deleteLibrary,
 };

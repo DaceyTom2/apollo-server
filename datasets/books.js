@@ -21,7 +21,7 @@ let books = [
     id: 4,
     title: "Rainbow Six",
     author: 3,
-    library: [],
+    library: [1],
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ function getBookByID(id) {
   return books.find((book) => book.id == id);
 }
 
-function addBook(id, title, author) {
+function addBook(id, title, author, library) {
   if (getBookByID(id) != undefined) {
     //Book with given ID Exists
     return false;
@@ -54,6 +54,7 @@ function addBook(id, title, author) {
     id: id,
     title: title,
     author: author,
+    library: library,
   };
   books.push(book);
   return true;

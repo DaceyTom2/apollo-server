@@ -35,6 +35,9 @@ function addAuthor(id, name, books) {
     books: books,
   };
   authors.push(author);
+  console.log(authors[1])
+  console.log(authors[2])
+  console.log(authors[3])
   return true;
 }
 
