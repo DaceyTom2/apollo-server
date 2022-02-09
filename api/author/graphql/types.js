@@ -10,6 +10,7 @@ const AuthorQueries = `
 
 const AuthorMutations = `
   addAuthor(id: ID!, name: String, books: [ID]): Response
+  updateAuthor(id: ID!, name: String, books: [ID]): Response
   deleteAuthor(id: ID!): Response
 `;
 

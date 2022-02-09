@@ -27,7 +27,7 @@ const schema = {
       success: Boolean
       message: String
     }`,
-    
+
   resolvers: {
     Query: {
       ...BookQueries,
