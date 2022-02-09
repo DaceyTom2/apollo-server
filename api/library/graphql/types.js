@@ -10,6 +10,7 @@ const LibraryQueries = `
 
 const LibraryMutations = `
   addLibrary(id: ID!, name: String, books: [ID]): Response
+  updateLibrary(id: ID!, name: String, books: [ID]): Response
   deleteLibrary(id: ID!): Response
 `;
 

@@ -33,6 +33,16 @@ function addLibrary(id, name, books) {
   return true;
 }
 
+function updateLibrary(id, name, books) {
+  let library = getLibraryByID(id);
+  if (getLibraryByID(id) == undefined) {
+    return false;
+  }
+  library.name = name;
+  library.books = books;
+  return true;
+}
+
 function deleteLibrary(id) {
   if (getLibraryByID(id) == undefined) {
     //Author with given ID Does Not Exist
@@ -48,5 +58,6 @@ export {
   getLibraries,
   getLibraryByID,
   addLibrary,
+  updateLibrary,
   deleteLibrary,
 };

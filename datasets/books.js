@@ -60,6 +60,17 @@ function addBook(id, title, author, library) {
   return true;
 }
 
+function updateBook(id, title, author, library) {
+  let book = getBookByID(id);
+  if (getBookByID(id) == undefined) {
+    return false;
+  }
+  book.title = title;
+  book.author = author;
+  book.library = library;
+  return true;
+}
+
 function deleteBook(id) {
   if (getBookByID(id) == undefined) {
     //Book with given ID Does Not Exist
@@ -71,4 +82,4 @@ function deleteBook(id) {
   return true;
 }
 
-export { getBooks, getBookByID, addBook, deleteBook };
+export { getBooks, getBookByID, addBook, updateBook, deleteBook };

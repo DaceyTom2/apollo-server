@@ -34,6 +34,7 @@ function addAuthor(id, name, books) {
     name: name,
     books: books.map(Number),
   };
+  authors.push(author);
   return true;
 }
 
@@ -43,7 +44,7 @@ function updateAuthor(id, name, books) {
     return false;
   }
   author.name = name;
-  author.book = books;
+  author.books = books;
   return true;
 }
 
